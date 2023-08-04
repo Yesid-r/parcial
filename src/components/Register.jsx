@@ -51,26 +51,26 @@ const Register = () => {
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="idDish" className="form-label">ID</label>
-                    <input type="text" className="form-control" id="idDish" value={dishData.idDish} onChange={(e) => setDishData({ ...dishData, idDish: e.target.value })} />
+                    <input type="text" className="form-control" id="idDish" value={dishData.idDish} onChange={(e) => setDishData({ ...dishData, idDish: e.target.value })} required/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Name</label>
-                    <input type="text" className="form-control" id="name" value={dishData.name} onChange={(e) => setDishData({ ...dishData, name: e.target.value })} />
+                    <input type="text" className="form-control" id="name" value={dishData.name} onChange={(e) => setDishData({ ...dishData, name: e.target.value })} required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="calories" className="form-label">Calories</label>
-                    <input type="number" className="form-control" id="calories" value={dishData.calories} onChange={(e) => setDishData({ ...dishData, calories: e.target.value })} />
+                    <input type="number" className="form-control" id="calories" value={dishData.calories} onChange={(e) => setDishData({ ...dishData, calories: e.target.value })} required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="isVegetarian" className="form-label">Is Vegetarian</label>
-                    <select className="form-select" id="isVegetarian" value={dishData.isVegetarian} onChange={(e) => setDishData({ ...dishData, isVegetarian: e.target.value === 'true' })}>
+                    <select className="form-select" id="isVegetarian" value={dishData.isVegetarian} onChange={(e) => setDishData({ ...dishData, isVegetarian: e.target.value === 'true' })} required>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                     </select>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="value" className="form-label">Value</label>
-                    <input type="number" className="form-control" id="value" value={dishData.value} onChange={(e) => setDishData({ ...dishData, value: e.target.value })} />
+                    <input type="number" className="form-control" id="value" value={dishData.value} onChange={(e) => setDishData({ ...dishData, value: e.target.value })} required/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="comments" className="form-label">Comments</label>

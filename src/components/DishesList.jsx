@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DishForm from './DishForm';
 
 const DishesList = () => {
+
   const [dishes, setDishes] = useState([]);
 
   useEffect(() => {
@@ -32,6 +33,7 @@ const DishesList = () => {
               <th>Is Vegetarian</th>
               <th>Value</th>
               <th>Comments</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -43,6 +45,7 @@ const DishesList = () => {
                 <td>{dish.isVegetarian ? 'Yes' : 'No'}</td>
                 <td>{dish.value}</td>
                 <td>{dish.comments}</td>
+                
               </tr>
             ))}
           </tbody>
