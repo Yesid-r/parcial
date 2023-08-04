@@ -4,11 +4,12 @@ Este proyecto fue iniciado con [Create React App](https://github.com/facebook/cr
 
 ## Available Scripts
 
-En el directorio del proyecto, puede ejecutar:
+En el directorio del proyecto, ejecutar:
 ### `npm install`
-para usar las dependencias: 
+algunas dependencias que se utilizaron: 
 
 `npm install react-router-dom`
+### Para ejecutar el proyecto:
 ### `npm start`
 
 Ejecuta la aplicación en el modo de desarrollo.
@@ -19,4 +20,4 @@ You may also see any lint errors in the console.
 ## 
 para buscar un plato se utiliza el object id del plato
 
-## nombre: Dairo Yesid Rincon Carreño
+## Autor: Dairo Yesid Rincon Carreño
