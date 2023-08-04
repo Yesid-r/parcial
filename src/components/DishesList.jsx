@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import DishForm from './DishForm';
+import DishModal from './DishModal';
 
 const DishesList = () => {
+    
 
   const [dishes, setDishes] = useState([]);
+  const [selectedDish, setSelectedDish] = useState(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +22,22 @@ const DishesList = () => {
 
     fetchData();
   }, []);
+  const handleOpenModal = async (_id) => {
+    try {
+      console.log(`id to search: ${_id}`)
+      const response = await fetch(`https://api-dishes.vercel.app/${_id}`);
+      const data = await response.json();
+      console.log(`data: ${data.name}`)
+      setSelectedDish(data.data);
+    } catch (error) {
+      console.error('Error searching for data:', error);
+    }
+  }
+  
+
+  const handleCloseModal = () => {
+    setSelectedDish(null);
+  };
 
   return (
     <div className='container'>
@@ -33,6 +53,7 @@ const DishesList = () => {
               <th>Is Vegetarian</th>
               <th>Value</th>
               <th>Comments</th>
+              <th>Action</th>
               
             </tr>
           </thead>
@@ -45,12 +66,18 @@ const DishesList = () => {
                 <td>{dish.isVegetarian ? 'Yes' : 'No'}</td>
                 <td>{dish.value}</td>
                 <td>{dish.comments}</td>
+                <td>
+                  <button type="button" className="btn btn-primary" onClick={() => handleOpenModal(dish._id)}>
+                    View
+                  </button>
+                </td>
                 
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {selectedDish && <DishModal dish={selectedDish} onClose={handleCloseModal} />}
     </div>
   );
 };
